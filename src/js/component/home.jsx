@@ -18,34 +18,22 @@ const Home = () => {
 			{
 				label: "tarea3",
 				done: false
-			},
-			{
-				label: "tarea4",
-				done: false
-			},
-			{
-				label: "tarea5",
-				done: false
 			}
 		];
 		let infoNecesaria = {
 			method: "PUT",
 			body: JSON.stringify(data),
-			headers: {
-				"Content-Type": "application/json"
-			}
+			headers: { "Content-Type": "application/json" }
 		};
-		fetch(
-			"https://assets.breatheco.de/apis/fake/todos/user/profemaca",
-			infoNecesaria
-		)
+
+		fetch("https://assets.breatheco.de/apis/fake/todos/user/pedroam",infoNecesaria)
 			.then(res => res.json())
 			.then(respuesta => console.log(respuesta))
 			.catch(error => console.log("alog paso", error));
-	}
-	//mandarTodos();
+	};
+	
 	function getTodos() {
-		fetch("https://assets.breatheco.de/apis/fake/todos/user/profemaca")
+		fetch("https://assets.breatheco.de/apis/fake/todos/user/pedroam")
 			.then(res => res.json())
 			.then(respuesta => console.log(respuesta))
 			.catch(error => console.log("alog paso", error));
@@ -53,7 +41,7 @@ const Home = () => {
 	getTodos();
 	return (
 		<div className="text-center mt-5">
-			<h1>api todos</h1>
+			<h1>ToDos API</h1>
 		</div>
 	);
 };
